@@ -1,0 +1,29 @@
+id: c0db5be5-0107-4125-becb-d697a0e55922
+timestamp: 2023-04-06T21:04:45Z
+username: guest
+source: TAP-GUI
+accelerator:
+  name: where-for-dinner
+  source:
+    image: harbor.kindlab.tap.fynesy.com/tap/tap-packages@sha256:e81f9a670e369f3dcd849a7ec1f211cb8313de079f6e07de74faad478936f43d
+fragments:
+  - name: tap-workload
+    source:
+      image: harbor.kindlab.tap.fynesy.com/tap/tap-packages@sha256:dbf0dedb6848ad8a7704c1c19465a1ddae9039b0e63c1dd0df3e2ed9cbda6093
+  - name: build-wrapper-maven
+    source:
+      image: harbor.kindlab.tap.fynesy.com/tap/tap-packages@sha256:195a3ca6585fa91c41292584a19c2807c72ecdf986ce860a7147451e89d467d4
+options:
+  cacheType: inmemCache
+  dbType: h2
+  dynamicMsgBroker: true
+  dynamicMsgBrokerClass: msgbroker-crossplane-where-for-dinner
+  enableCloudEvents: false
+  enableSecurity: false
+  includeBuildToolWrapper: true
+  msgBrokerType: rabbitmq
+  msgbrokerName: msgbroker-where-for-dinner
+  numRabbitMQClusterNodes: 1
+  projectName: tapkindwfd1
+  serviceNamespace: default
+  workloadNamespace: default
