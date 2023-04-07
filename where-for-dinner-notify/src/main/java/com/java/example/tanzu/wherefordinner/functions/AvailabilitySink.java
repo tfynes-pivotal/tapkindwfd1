@@ -18,6 +18,7 @@ import reactor.core.publisher.Mono;
 @Slf4j
 public class AvailabilitySink 
 {
+	
 	@Autowired
 	protected List<Publisher> publishers;
 	
